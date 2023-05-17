@@ -1,4 +1,4 @@
-import User from "../mongo/models/UserSchema";
+import User from "../mongo/models/UserSchema.js";
 
 const getUsers = async (req, res) => {
   try {

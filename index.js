@@ -1,4 +1,4 @@
-import Connect from "./mongo/Connect";
+import Connect from "./mongo/Connect.js";
 import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
