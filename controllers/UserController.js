@@ -54,14 +54,4 @@ const getUsers = async (req, res) => {
 };
 
 
-const addUsers=(req,res)=>{
-  try {
-    const{}
-    
-  } catch (error) {
-    
-  }
-
-}
-
 export {getUsers}

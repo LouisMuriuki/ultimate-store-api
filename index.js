@@ -3,14 +3,16 @@ import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 import userRoute from "./routes/userRoutes.js"
+import authRoute from "./routes/authRoute.js"
 dotenv.config();
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
-app.use(cors);
+app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 
-app.get("/", userRoute);
+app.use("/api/v1/user", userRoute);
+app.use("/api/v1/register",authRoute)
 
 const startServer = async () => {
   try {
