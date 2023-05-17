@@ -52,3 +52,16 @@ const getUsers = async (req, res) => {
     res.status(500).json({ success: false, data: error });
   }
 };
+
+
+const addUsers=(req,res)=>{
+  try {
+    const{}
+    
+  } catch (error) {
+    
+  }
+
+}
+
+export {getUsers}
