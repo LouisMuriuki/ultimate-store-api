@@ -43,7 +43,7 @@ const getUsers = async (req, res) => {
         console.log("no such page");
       }
     }
-    usersquery.skip(skip).limit(limit); 
+    usersquery.skip(skip).limit(limit);
 
     //  executeQuery
     const users = await usersquery;
@@ -53,5 +53,25 @@ const getUsers = async (req, res) => {
   }
 };
 
+const updateUser = async (req, res) => {
+  if (req.body.password) {
+    req.body.password = CryptoJS.AES.encrypt(
+      password,
+      process.env.PASSSECRET
+    ).toString();
+  }
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      req.body.id,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    );
+    res.status(200).json({ success: true, data: updatedUser });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
 
-export {getUsers}
+export { getUsers,updateUser };

@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 
 app.use("/api/v1/user", userRoute);
-app.use("/api/v1/register",authRoute)
+app.use("/api/v1/auth",authRoute)
 
 const startServer = async () => {
   try {
