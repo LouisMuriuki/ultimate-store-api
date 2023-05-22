@@ -2,8 +2,8 @@ import Order from "../mongo/models/OrderSchema.js";
 
 const getUserOrder = async (req, res) => {
   try {
-    const Order = await Order.find({ userId: req.params.id });
-    res.status(200).json({ success: true, data: Order });
+    const userOrder = await Order.find({ userId: req.params.id });
+    res.status(200).json({ success: true, data: userOrder });
   } catch (error) {
     res.status(500).json({ success: false, error });
   }
@@ -11,7 +11,7 @@ const getUserOrder = async (req, res) => {
 
 const getAllOrders = async (req, res) => {
   try {
-    const allOrders = await Cart.find({});
+    const allOrders = await Order.find({});
     res.status(200).json({ success: true, data: allOrders });
   } catch (error) {
     res.status(500).json({ success: false, error });
@@ -55,7 +55,7 @@ const deleteOrder = async (req, res) => {
   }
 };
 
-const monthlyOrders = async (req, res) => {
+const monthlyOrderStats = async (req, res) => {
   const date = new Date();
   const lastmonth = new Date(date.setMonth(date.getMonth() - 1));
   const previousmonth = new Date(date.setMonth(lastmonth.getMonth() - 1));
@@ -88,5 +88,5 @@ export {
   createOrder,
   updateOrder,
   deleteOrder,
-  monthlyOrders,
+  monthlyOrderStats,
 };

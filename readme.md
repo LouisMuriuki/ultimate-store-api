@@ -1,13 +1,17 @@
 # RestFul API for my E-commerce Website
 Build with Node, Express and MongoDB
 
+An Api showing all the http endpoints with full requirements of a  scalable backend of an ecommerce site
+
+![httpendpoints](./assests/postman.png)
+
 ## Features
 ~ MVC pattern  
 ~ CRUD operations  
-  -filtering  
-  -pagination  
-  -advanced querying  
-  -sorting   
+  - filtering  
+  - pagination  
+  - advanced querying  
+  - sorting   
 ~ Middleware and Authentication  
 ~ Stripe Gateway  
 

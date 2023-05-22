@@ -19,6 +19,7 @@ app.use("/api/v1/users", userRoute);
 app.use("/api/v1/products",productRoute)
 app.use("/api/v1/cart",cartRoute)
 app.use("/api/v1/orders",orderRoute)
+app.use("/api/v1/stripe",orderRoute)
 
 const startServer = async () => {
   try {
