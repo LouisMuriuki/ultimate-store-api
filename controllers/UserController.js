@@ -14,39 +14,39 @@ const getUsers = async (req, res) => {
     // do anything with this query
     const usersquery = User.find(JSON.parse(queryStr));
 
-    // //sort
-    // if (req.query.sort) {
-    //   const sortBy = req.query.sort.split(",").join(" ");
-    //   usersquery.sort(sortBy);
-    // } else {
-    //   somequery = somequery.sort("-createdAt");
-    // }
+    //sort
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(",").join(" ");
+      usersquery.sort(sortBy);
+    } else {
+      usersquery.sort("-createdAt");
+    }
 
-    // //limitfields
+    //limitfields
 
-    // if (req.query.fields) {
-    //   const fileds = req.query.fileds.split(",").join(" ");
-    //   usersquery.select(fileds);
-    // } else {
-    //   usersquery.select("-__v");
-    // }
+    if (req.query.fields) {
+      const fileds = req.query.fileds.split(",").join(" ");
+      usersquery.select(fileds);
+    } else {
+      usersquery.select("-__v");
+    }
 
-    // //pagination
+    //pagination
 
-    // const page = req.query.page * 1 || 1;
-    // const limit = req.query.limit * 1 || 10;
-    // const skip = (page - 1) * limit;
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.limit * 1 || 10;
+    const skip = (page - 1) * limit;
 
-    // if (req.query.page) {
-    //   const doclength = await User.countDocuments();
-    //   if (skip >= doclength) {
-    //     console.log("no such page");
-    //   }
-    // }
-    // usersquery.skip(skip).limit(limit);
+    if (req.query.page) {
+      const doclength = await User.countDocuments();
+      if (skip >= doclength) {
+        console.log("no such page");
+      }
+    }
+    usersquery.skip(skip).limit(limit);
 
-    // //  executeQuery
-    // const users = await usersquery;
+    //  executeQuery
+    const users = await usersquery;
 
     const allusers = await User.find({});
     res.status(200).json({ success: true, data: allusers });

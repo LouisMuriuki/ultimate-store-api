@@ -1,6 +1,11 @@
 # RestFul API for my E-commerce Website
 Build with Node, Express and MongoDB
 
+## Features
+~ MVC pattern
+~ CRUD operations
+~ Authentication
+~ Middleware
 
 ## Run Project
 1. Clone this repository
