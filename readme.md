@@ -6,14 +6,14 @@ An Api showing all the http endpoints with full requirements of a  scalable back
 ![httpendpoints](./assests/postman.png)
 
 ## Features
-~ MVC pattern  
-~ CRUD operations  
+1. MVC pattern  
+2. CRUD operations  
   - filtering  
   - pagination  
   - advanced querying  
   - sorting   
-~ Middleware and Authentication  
-~ Stripe Gateway  
+3. Middleware and Authentication  
+4. Stripe Gateway  
 
 ## Run Project
 1. Clone this repository
