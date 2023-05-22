@@ -12,7 +12,14 @@ const getAllProducts = async (req, res) => {
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
 
     // do anything with this query
-    const productsquery = Product.find(JSON.parse(queryStr));
+    let productsquery;
+    if (req.query.category) {
+      productsquery = Product.find({
+        category: { $in: [req.query.category] },  //get products with the category
+      });
+    } else {
+      productsquery = Product.find(JSON.parse(queryStr));
+    }
 
     //sort
     if (req.query.sort) {
