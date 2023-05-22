@@ -2,14 +2,14 @@
 Build with Node, Express and MongoDB
 
 ## Features
-~ MVC pattern
-~ CRUD operations
-  -filtering
-  -pagination
-  -advanced querying
-  -sorting 
-~ Middleware and Authentication
-~ Stripe Gateway
+~ MVC pattern  
+~ CRUD operations  
+  -filtering  
+  -pagination  
+  -advanced querying  
+  -sorting   
+~ Middleware and Authentication  
+~ Stripe Gateway  
 
 ## Run Project
 1. Clone this repository
